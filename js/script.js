@@ -47,9 +47,15 @@ function validaChances(num){
         caixaTexto.focus()
     } else {
         numerosJogados.push(num)
-        caixaTexto.value = ''
-        caixaTexto.focus()
-        console.log(numerosJogados)
+        if(minhasJogadas === 6 && num != numeroAleatorio){
+            displayTentativas(num)
+            msgTexto(`Game over!! O numero jogado era ${numeroAleatorio}`)
+            fimJogo()
+
+        } else {
+            displayTentativas(num)
+            checarTentativas(num)
+        }
     }
     // else if(num == numeroAleatorio){
     //     alert('Acertou mizeravel! 🫵🥇')
