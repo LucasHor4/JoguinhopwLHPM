@@ -55,6 +55,6 @@ function validaChances(num){
     //     alert('Acertou mizeravel! 🫵🥇')
     //     caixaTexto.value = ''
     //     caixaTexto.focus()
-    // }
+    // } teste
 
 }
