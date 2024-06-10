@@ -41,6 +41,10 @@ function validaChances(num){
         alert('Informe apenas valores entre 1 e 100! 🤬🤬')
         caixaTexto.value = ''
         caixaTexto.focus()
+    }else if(numerosJogados.includes(num)){
+        alert(`O numero ${num} já foi jogado, informe outro numero! 🫵🤔`)
+        caixaTexto.value = ''
+        caixaTexto.focus()
     } else {
         numerosJogados.push(num)
         caixaTexto.value = ''
