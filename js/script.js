@@ -1,4 +1,4 @@
-const numeroAleatorio = parseInt(Math.random()*100+1)
+const numeroAleatorio = parseInt(Math.random() * 100 + 1)
 //console.log(numeroAleatorio)
 
 const botaoJogar = document.querySelector('#jogar') // const que recebe botão jogar
@@ -20,8 +20,8 @@ let minhasJogadas = 1
 //variavel para informar que podemos jogar
 let playGame = true
 
-if(playGame){
-    botaoJogar.addEventListener('click', function(e){ //criando function expression/ sem nome passando como parâmetro o botão jogar
+if (playGame) {
+    botaoJogar.addEventListener('click', function (e) { //criando function expression/ sem nome passando como parâmetro o botão jogar
         e.preventDefault() // tira a ação de envio do botão
         let tentativa = parseInt(caixaTexto.value) // variavel que receberá um numero inteiro. este numero o usuario que vai informar
         validaChances(tentativa)
@@ -32,22 +32,22 @@ if(playGame){
     })
 }
 
-function validaChances(num){
-    if(isNaN(num)){
+function validaChances(num) {
+    if (isNaN(num)) {
         alert('Atenção, informe apenas digitos numericos! 🤬🤬')
         caixaTexto.value = ''
         caixaTexto.focus()
-    } else if(num < 1 || num > 100){
+    } else if (num < 1 || num > 100) {
         alert('Informe apenas valores entre 1 e 100! 🤬🤬')
         caixaTexto.value = ''
         caixaTexto.focus()
-    }else if(numerosJogados.includes(num)){
+    } else if (numerosJogados.includes(num)) {
         alert(`O numero ${num} já foi jogado, informe outro numero! 🫵🤔`)
         caixaTexto.value = ''
         caixaTexto.focus()
     } else {
         numerosJogados.push(num)
-        if(minhasJogadas === 6 && num != numeroAleatorio){
+        if (minhasJogadas === 6 && num != numeroAleatorio) {
             displayTentativas(num)
             msgTexto(`Game over!! O numero jogado era ${numeroAleatorio}`)
             fimJogo()
@@ -57,10 +57,16 @@ function validaChances(num){
             checarTentativas(num)
         }
     }
-    // else if(num == numeroAleatorio){
-    //     alert('Acertou mizeravel! 🫵🥇')
-    //     caixaTexto.value = ''
-    //     caixaTexto.focus()
-    // } teste
 
+}
+
+function checarTentativas(num) {
+    if (num === numeroAleatorio) {
+        msgTexto(`Parabéns, você acertou o numero secreto que era o ${numeroAleatorio}!🫵🥇🥳`)
+        fimJogo()
+    } else if (num < numeroAleatorio) {
+        msgTexto('Palpite baixo, tente novamente 🤔')
+    } else if (num > numeroAleatorio) {
+        msgTexto('Palpite alto, tente novamente 🤔')
+    }
 }
