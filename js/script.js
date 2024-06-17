@@ -51,7 +51,7 @@ function validaChances(num) {
             audioBrawlLose.play()
             displayTentativas(num)
             alert(`Game over!! O numero jogado era ${numeroAleatorio}`)
-            // fimJogo()
+            fimJogo()
 
         } else {
             checarTentativas(num)
@@ -87,4 +87,8 @@ function displayTentativas(num){
     minhasJogadas++
     jogadasRestantes.innerHTML =  `${7 - minhasJogadas}`
 
+}
+
+function fimJogo() {
+    playGame = !playGame
 }
