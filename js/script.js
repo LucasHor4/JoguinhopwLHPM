@@ -1,5 +1,5 @@
 const numeroAleatorio = parseInt(Math.random() * 100 + 1)
-//console.log(numeroAleatorio)
+console.log(numeroAleatorio)
 
 const botaoJogar = document.querySelector('#jogar') // const que recebe botão jogar
 const caixaTexto = document.querySelector('#txtNumero') // caixa de texto
@@ -48,25 +48,43 @@ function validaChances(num) {
     } else {
         numerosJogados.push(num)
         if (minhasJogadas === 6 && num != numeroAleatorio) {
+            audioBrawlLose.play()
             displayTentativas(num)
-            msgTexto(`Game over!! O numero jogado era ${numeroAleatorio}`)
-            fimJogo()
+            alert(`Game over!! O numero jogado era ${numeroAleatorio}`)
+            // fimJogo()
 
         } else {
-            displayTentativas(num)
             checarTentativas(num)
+            displayTentativas(num)
         }
     }
 
 }
 
+const audio1 = new Audio('js/ohoh.mp3')
+const audio2 = new Audio('js/buzzer.mp3')
+const audio3 = new Audio('js/stock.mp3')
+const audioBrawlLose = new Audio('js/brawl-stars-ost-lose-made-with-Voicemod.mp3')
+
 function checarTentativas(num) {
     if (num === numeroAleatorio) {
-        msgTexto(`Parabéns, você acertou o numero secreto que era o ${numeroAleatorio}!🫵🥇🥳`)
+        audio3.play()
+        alert(`Parabéns, você acertou o numero secreto que era o ${numeroAleatorio}!🫵🥇🥳`)
         fimJogo()
     } else if (num < numeroAleatorio) {
-        msgTexto('Palpite baixo, tente novamente 🤔')
+        audio1.play()
+        alert('Palpite baixo, tente novamente 🤔')
     } else if (num > numeroAleatorio) {
-        msgTexto('Palpite alto, tente novamente 🤔')
+        audio1.play()
+        alert('Palpite alto, tente novamente 🤔')
     }
+}
+
+function displayTentativas(num){
+    caixaTexto.value = ''
+    caixaTexto.focus()
+    jogadasAnteriores.innerHTML += `${num} , `
+    minhasJogadas++
+    jogadasRestantes.innerHTML =  `${7 - minhasJogadas}`
+
 }
