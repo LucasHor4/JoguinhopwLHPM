@@ -63,7 +63,7 @@ function validaChances(num) {
 
 const audio1 = new Audio('js/ohoh.mp3')
 const audio2 = new Audio('js/buzzer.mp3')
-const audio3 = new Audio('js/stock.mp3')
+const audio3 = new Audio('js/brawl-stars-ost-win-made-with-Voicemod.mp3')
 const audioBrawlLose = new Audio('js/brawl-stars-ost-lose-made-with-Voicemod.mp3')
 
 function checarTentativas(num) {
