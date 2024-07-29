@@ -69,24 +69,32 @@ const audioBrawlLose = new Audio('js/brawl-stars-ost-lose-made-with-Voicemod.mp3
 function checarTentativas(num) {
     if (num === numeroAleatorio) {
         audio3.play()
-        alert(`Parabéns, você acertou o numero secreto que era o ${numeroAleatorio}!🫵🥇🥳`)
+        msgTexto(`Parabéns, você acertou o numero secreto que era o ${numeroAleatorio}!🫵🥇🥳`)
         fimJogo()
     } else if (num < numeroAleatorio) {
         audio1.play()
-        alert('Palpite baixo, tente novamente 🤔')
+        msgTexto('Palpite baixo, tente novamente 🤔')
     } else if (num > numeroAleatorio) {
         audio1.play()
-        alert('Palpite alto, tente novamente 🤔')
+        msgTexto('Palpite alto, tente novamente 🤔')
     }
 }
 
 function displayTentativas(num){
     caixaTexto.value = ''
     caixaTexto.focus()
-    jogadasAnteriores.innerHTML += `${num} , `
+    if (minhasJogadas <= 5){
+        jogadasAnteriores.innerHTML += `${num} ,`
+    } else {
+        jogadasAnteriores.innerHTML += `${num}`
+    }
     minhasJogadas++
     jogadasRestantes.innerHTML =  `${7 - minhasJogadas}`
 
+}
+
+function msgTexto(msg) {
+    avisos.innerHTML = `<h1>${msg}</h1>`
 }
 
 function fimJogo() {
