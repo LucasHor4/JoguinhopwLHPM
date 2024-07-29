@@ -86,7 +86,7 @@ function displayTentativas(num){
     if (minhasJogadas <= 5){
         jogadasAnteriores.innerHTML += `${num} ,`
     } else {
-        jogadasAnteriores.innerHTML += `${num}`
+        jogadasAnteriores.innerHTML += `${num}.`
     }
     minhasJogadas++
     jogadasRestantes.innerHTML =  `${7 - minhasJogadas}`
