@@ -92,3 +92,5 @@ function displayTentativas(num){
 function fimJogo() {
     playGame = !playGame
 }
+
+//teste
