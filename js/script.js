@@ -98,7 +98,9 @@ function msgTexto(msg) {
 }
 
 function fimJogo() {
-    playGame = !playGame
+    caixaTexto.setAttribute('disabled', '')
+    botaoJogar.setAttribute('disabled', '')
+    paragrafo.innerHTML = '<button id="iniciarJogada" style=" width:100px; heigth:50px; position: center"> Iniciar Game </button>' //arrumar esse style para ele ficar no css (visualmente melhor no código)
+    recomecar.appendChild(paragrafo)
+    playGame = false
 }
-
-//teste
