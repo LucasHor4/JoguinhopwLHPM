@@ -100,7 +100,17 @@ function msgTexto(msg) {
 function fimJogo() {
     caixaTexto.setAttribute('disabled', '')
     botaoJogar.setAttribute('disabled', '')
+    paragrafo.classList.add('button')
     paragrafo.innerHTML = '<button id="iniciarJogada" style="position: center"> Iniciar Game </button>' //arrumar esse style para ele ficar no css (visualmente melhor no código)
     recomecar.appendChild(paragrafo)
     playGame = false
+    iniciarJogo()
 }
+ function iniciarJogo(){
+    playGame = true
+    function{
+        
+    }
+    caixaTexto.setAttribute('enabled', '')
+    botaoJogar.setAttribute('enabled', '')
+ }

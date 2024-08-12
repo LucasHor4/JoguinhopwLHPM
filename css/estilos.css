@@ -65,5 +65,12 @@ p{
 }
 	
 button{
-	
+	background-color: orchid;
+	color:white;
+	width: 250px;
+	height: 50px;
+	border-radius: 25px;
+	font-size:30px;
+	border-style: 30px;
+	cursor: pointer;
 }
