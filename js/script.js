@@ -106,11 +106,20 @@ function fimJogo() {
     playGame = false
     iniciarJogo()
 }
- function iniciarJogo(){
+
+function iniciarJogo(){
     playGame = true
-    function{
-        
-    }
-    caixaTexto.setAttribute('enabled', '')
-    botaoJogar.setAttribute('enabled', '')
- }
+    const iniciarBotao = document.querySelector('iniciarJogada')
+    iniciarBotao.addEventListener('click', function(){
+        numeroAleatorio = parseInt(Math.random()*100+1)
+        numerosJogados = []
+        minhasJogadas = 1
+        jogadasAnteriores.innerHTML = ''
+        avisos.innerHTML = ''
+        jogadasRestantes.innerHTML =  `${7 - minhasJogadas}`
+        caixaTexto.removeAttribute('disabled')
+        botaoJogar.removeAttribute('disabled')
+        recomecar.removeChild(paragrafo)
+    })
+
+}
