@@ -30,6 +30,8 @@ if (playGame) {
         // caixaTexto.value = ''
         // caixaTexto.focus()
     })
+} else {
+    fimJogo()
 }
 
 function validaChances(num) {
