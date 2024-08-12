@@ -61,10 +61,10 @@ function validaChances(num) {
 
 }
 
-const audio1 = new Audio('js/ohoh.mp3')
-const audio2 = new Audio('js/buzzer.mp3')
-const audio3 = new Audio('js/brawl-stars-ost-win-made-with-Voicemod.mp3')
-const audioBrawlLose = new Audio('js/brawl-stars-ost-lose-made-with-Voicemod.mp3')
+const audio1 = new Audio('mp3/ohoh.mp3')
+const audio2 = new Audio('mp3/buzzer.mp3')
+const audio3 = new Audio('mp3/brawl-stars-ost-win-made-with-Voicemod.mp3')
+const audioBrawlLose = new Audio('mp3/brawl-stars-ost-lose-made-with-Voicemod.mp3')
 
 function checarTentativas(num) {
     if (num === numeroAleatorio) {
@@ -100,7 +100,7 @@ function msgTexto(msg) {
 function fimJogo() {
     caixaTexto.setAttribute('disabled', '')
     botaoJogar.setAttribute('disabled', '')
-    paragrafo.innerHTML = '<button id="iniciarJogada" style=" width:100px; heigth:50px; position: center"> Iniciar Game </button>' //arrumar esse style para ele ficar no css (visualmente melhor no código)
+    paragrafo.innerHTML = '<button id="iniciarJogada" style="position: center"> Iniciar Game </button>' //arrumar esse style para ele ficar no css (visualmente melhor no código)
     recomecar.appendChild(paragrafo)
     playGame = false
 }
