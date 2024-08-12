@@ -120,6 +120,7 @@ function iniciarJogo(){
         caixaTexto.removeAttribute('disabled')
         botaoJogar.removeAttribute('disabled')
         recomecar.removeChild(paragrafo)
+        caixaTexto.focus
     })
 
 }
