@@ -1,4 +1,4 @@
-const numeroAleatorio = parseInt(Math.random() * 100 + 1)
+let numeroAleatorio = parseInt(Math.random() * 100 + 1)
 console.log(numeroAleatorio)
 
 const botaoJogar = document.querySelector('#jogar') // const que recebe botão jogar
@@ -12,7 +12,7 @@ const avisos = document.querySelector('.avisos') // pegando terceiro paragrafo d
 const paragrafo = document.createElement('p') // criando um paragrafo
 
 //criando um vetor vazio
-const numerosJogados = []
+let numerosJogados = []
 
 //criando uma variavel que representará o contador
 let minhasJogadas = 1
@@ -109,9 +109,9 @@ function fimJogo() {
 
 function iniciarJogo(){
     playGame = true
-    const iniciarBotao = document.querySelector('iniciarJogada')
+    const iniciarBotao = document.querySelector('#iniciarJogada')
     iniciarBotao.addEventListener('click', function(){
-        numeroAleatorio = parseInt(Math.random()*100+1)
+        numeroAleatorio = parseInt(Math.random() * 100 + 1)
         numerosJogados = []
         minhasJogadas = 1
         jogadasAnteriores.innerHTML = ''
